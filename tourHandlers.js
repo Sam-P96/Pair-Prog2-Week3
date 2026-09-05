@@ -9,28 +9,28 @@ const Tours = require("./toursLib");
 
 const getAllTours = (req, res) => {
   // const tours = Tours.getAll();
-  res.json({ message: "Hello from 1s" });
+  res.json({ message: "Hello from getAllTours" });
   // res.json(tours);
 };
 
 
 // REMEMBER TO FIX THESE
 const createTour = (req, res) => {
-  res.json({ message: "Hello from 2" });
+  res.json({ message: "createTour" });
 };
   
 
 // Remember to double check
 const getTourById = (req, res) => {
-  res.json({ message: "Hello from 3" });
+  res.json({ message: "getTourById" });
 };
 
 const updateTour = (req, res) => {
-  cres.json({ message: "Hello from 4s" });
+  cres.json({ message: "updateTour" });
 };
 
 const deleteTour = (req, res) => {
-  res.json({ message: "Hello from 5" });
+  res.json({ message: "deleteTour" });
 };
 
 module.exports = {
