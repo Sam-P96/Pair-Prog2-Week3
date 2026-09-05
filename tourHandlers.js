@@ -38,9 +38,19 @@ const getTourById = (req, res) => {
 
   res.json(tour);
 };
+
+
 const updateTour = (req, res) => {
-  cres.json({ message: "updateTour" });
-};
+  const tourId = req.params.tourId;
+
+  const updatedTour = Tours.update(tourId, req.body);
+  
+  if (updatedTour) {
+    res.json(updatedTour);
+  } else {
+    res.status(404).json({message: "Tour not found"})
+  }
+  }
 
 const deleteTour = (req, res) => {
   res.json({ message: "deleteTour" });
@@ -55,54 +65,3 @@ module.exports = {
 }
 
 
-
-
-  
-
-// // Remember to double check
-// const getTourById = (req, res) => {
-//   const tourId = req.params.tourId;
-//   const tour = Tours.findById(tourId);
-//   if (tour) {
-//     res.json(tour);
-//   } else {
-//     res.status(404).json({ message: "Tour not found" });
-//   }
-//   res.json({ message: "Hello from getTourkById" });
-// };
-
-// const updateTour = (req, res) => {
-//   const tourId = req.params.tourId;
-
-//   const updatedTour = Tour.update(
-//     tourId,
-//     req.body
-//   );
-
-//   if (updatedTour) {
-//      res.json({ message: "Hello from updateTour"})
-//     // res.json(updatedTour);
-//   } else {
-//     res.status(404).json({ message: "Tour not found" });
-//   }
-// };
-
-// const deleteTour = (req, res) => {
-//   const tourId = req.params.tourId;
-
-//   const isDeleted = Tour.deleteOne(tourkId);
-
-//   if (isDeleted) {
-//     res.status(204).send();
-//   } else {
-//     res.status(404).json({ message: "Tour not found" });
-//   }
-// };
-
-// module.exports = {
-//     getAllTours,
-//     createTour,
-//     getTourById,
-//     updateTour,
-//     deleteTour
-// }

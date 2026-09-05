@@ -13,7 +13,6 @@ const {
 } = require("./tourHandlers");
 
 
-
 app.get("/tours", getAllTours);
 
 app.post("/tours", createTour);

@@ -21,9 +21,25 @@ const findById = (id) => {
   }
 }
 
+const update = (id, data) => {
+    const tourId = Number(id);
+    const findTour = Tours.find((item) => item.id === tourId)
+    if (findTour) {
+        if (data.name) findTour.name = data.name;
+        if (data.info) findTour.info = data.info;
+        if (data.image) findTour.image = data.image;
+        if (data.price) findTour.price = data.price;
+        if (data.location) findTour.location = data.location;
+        return findTour;
+    } else {
+        return null;
+    }
+}
+
 
 module.exports = {
   addOne,
   getAll,
   findById,
+  update
 };
