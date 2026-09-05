@@ -1,4 +1,4 @@
-// const Tours = require("./ToursLib");
+const Tours = require("./toursLib");
 
 // const getAllTours = (req, res) => {
 //   // const tours = Tours.getAll();
@@ -45,10 +45,10 @@ module.exports = {
 
 // // REMEMBER TO FIX THESE
 // const createTour = (req, res) => {
-//   const { sender, message, rating, platform } = req.body;
-//   if (!sender || !message || !platform || rating < 1 || rating > 5) {
+//   const { name, info, image, price, location } = req.body;
+//   if (!name || !info || !image || !price || !location) {
 //     return res.status(400).json({
-//     message: "Invalid feedback data",
+//     message: "Invalid tour data",
 //   })} else {
 //      res.json({ message: "Hello from createTour"}
 //     // const newTour = Tour.addOne(
