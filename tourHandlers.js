@@ -30,9 +30,14 @@ const createTour = (req, res) => {
 
 // Remember to double check
 const getTourById = (req, res) => {
-  res.json({ message: "getTourById" });
-};
+  const tour = Tours.findById(req.params.tourId);
 
+  if (!tour) {
+    return res.status(404).json({ message: "Tour not found" });
+  }
+
+  res.json(tour);
+};
 const updateTour = (req, res) => {
   cres.json({ message: "updateTour" });
 };
