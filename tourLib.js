@@ -21,6 +21,7 @@ const findById = (id) => {
   }
 }
 
+
 const update = (id, data) => {
     const tourId = Number(id);
     const findTour = Tours.find((item) => item.id === tourId)
@@ -36,10 +37,24 @@ const update = (id, data) => {
     }
 }
 
+const deleteOne = (id) => {
+  const index = Tours.findIndex(
+    (tour) => tour.id === Number(id)
+  );
+
+  if (index === -1) {
+    return false;
+  }
+
+  Tours.splice(index, 1);
+  return true;
+};
+
 
 module.exports = {
   addOne,
   getAll,
   findById,
-  update
+  update,
+  deleteOne,
 };
