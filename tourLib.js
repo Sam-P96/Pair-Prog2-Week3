@@ -18,3 +18,27 @@ if (require.main === module) {
 
   console.log(result);
 }
+
+const getAll = () => {
+  return Tours;
+};
+
+if (require.main === module) {
+  addOne(
+    "Paris in 7 Days",
+    "Explore Paris.",
+    "https://example.com/paris.jpg",
+    "1,995",
+    "Paris, France"
+  );
+
+  addOne(
+    "Helsinki Weekend",
+    "Discover Helsinki.",
+    "https://example.com/helsinki.jpg",
+    "795",
+    "Helsinki, Finland"
+  );
+
+  console.log(getAll());
+}
