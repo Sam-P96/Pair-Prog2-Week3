@@ -59,7 +59,7 @@ const deleteTour = (req, res) => {
   if (!deleted ) {
     return res.status(404).json({message: "tour not found"});
   } 
-  res.status(204).json({message: "Tour deleted successfully"});
+  res.status(200).json({message: "Tour deleted successfully"});
 };
 
 module.exports = {
