@@ -1,11 +1,5 @@
 const Tours = require("./tourLib");
 
-// const getAllTours = (req, res) => {
-//   // const tours = Tours.getAll();
-//   res.json({ message: "Hello from getAllTours" });
-//   // res.json(tours);
-// };
-
 
 const getAllTours = (req,res) => {
   const tours = Tours.getAll();
@@ -14,8 +8,24 @@ const getAllTours = (req,res) => {
 
 // REMEMBER TO FIX THESE
 const createTour = (req, res) => {
-  res.json({ message: "createTour" });
-};
+  const { name, info, image, price, location } = req.body;
+  if (!name || !info || !image || !price || !location) {
+    return res.status(400).json({
+    message: "Invalid tour data",
+  })} else {
+    const newTour = Tours.addOne(
+    name,
+    info,
+    image,
+    price,
+    location
+  );
+  if (newTour) {
+    res.status(201).json(newTour);
+  } else {
+    res.status(500).json({ message: "Failed to create Tour" });
+  }
+}};
   
 
 // Remember to double check
@@ -41,26 +51,7 @@ module.exports = {
 
 
 
-// // REMEMBER TO FIX THESE
-// const createTour = (req, res) => {
-//   const { name, info, image, price, location } = req.body;
-//   if (!name || !info || !image || !price || !location) {
-//     return res.status(400).json({
-//     message: "Invalid tour data",
-//   })} else {
-//      res.json({ message: "Hello from createTour"}
-//     // const newTour = Tour.addOne(
-//     // sender,
-//     // message,
-//     // rating,
-//     // platform
-//   );
-//   if (newTour) {
-//     res.status(201).json(newTour);
-//   } else {
-//     res.status(500).json({ message: "Failed to create Tour" });
-//   }
-// }};
+
   
 
 // // Remember to double check
