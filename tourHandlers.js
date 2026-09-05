@@ -1,4 +1,4 @@
-const Tours = require("./toursLib");
+const Tours = require("./tourLib");
 
 // const getAllTours = (req, res) => {
 //   // const tours = Tours.getAll();
@@ -7,12 +7,10 @@ const Tours = require("./toursLib");
 // };
 
 
-const getAllTours = (req, res) => {
-  // const tours = Tours.getAll();
-  res.json({ message: "Hello from getAllTours" });
-  // res.json(tours);
+const getAllTours = (req,res) => {
+  const tours = Tours.getAll();
+  res.json(tours);
 };
-
 
 // REMEMBER TO FIX THESE
 const createTour = (req, res) => {

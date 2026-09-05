@@ -1,5 +1,5 @@
 
-const express = require("express")
+const express = require("express");
 const app = express();
 
 const {
@@ -28,14 +28,3 @@ app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
 })
 
-if (require.main === module) {
-  const result = addOne(
-    "7 Days Tour",
-    "Join us for the Best of Helsinki!",
-    "https://www.course-api.com/images/tours/tour-x.jpeg",
-    "1,495",
-    "Helsinki, Finland"
-  );
-
-  console.log(result);
-}
